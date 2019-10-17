@@ -95,6 +95,7 @@ public abstract class Prioritizer3<T,comparator> implements Prioritizer<T>{
                }
                break;
             }
+               
 		}
       
 	    System.out.println("After removing index"+index);
