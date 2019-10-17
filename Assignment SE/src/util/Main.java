@@ -33,7 +33,7 @@ public class Main {
 
 					p1 = new Prioritizer1<>(size, t);
 					for (int i = 0; i < size; i++) {
-						System.out.println("Enter " + i + 1 + " th Element");
+						System.out.println("Enter " + (i + 1) + " th Element");
 						obj1 = sc.nextInt();
 						p1.insert((T) obj1, i);
 					}
