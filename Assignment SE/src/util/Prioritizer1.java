@@ -165,7 +165,7 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 		return phase;
 	}
 
-	public int compare(Prioritizer1 input1, Prioritizer2 input2) {
+	public int compare(Prioritizer1 input1, Prioritizer1 input2) {
 		// TODO Auto-generated method stub
 		return input1.getSize()-input2.getSize();
 		
