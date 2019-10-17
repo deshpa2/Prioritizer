@@ -3,7 +3,7 @@ package util;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Prioritizer2<T> implements Prioritizer<T> {
+public class Prioritizer2<T, Comparator> implements Prioritizer<T> {
 
 	private int top = 0;
 	private T contents[];
@@ -61,10 +61,10 @@ public class Prioritizer2<T> implements Prioritizer<T> {
 
 	
 
-	@Override
-	public int compare(T o1, T o2) {
+	public int compare(@SuppressWarnings("rawtypes") Prioritizer1 o1, @SuppressWarnings("rawtypes") Prioritizer2 o2) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		return o1.getInput().length-o2.contents.length;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -162,5 +162,13 @@ public class Prioritizer2<T> implements Prioritizer<T> {
 		return flag;
 
 	}
+
+	@Override
+	public int compare(T o1, T o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }

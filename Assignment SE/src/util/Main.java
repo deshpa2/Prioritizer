@@ -15,7 +15,6 @@ public class Main {
 
 		// Prioritizer 2- Creating Object and Initialize it using Constructor
 		Prioritizer<T> p2 = null;
-
 		Object obj1 = null;
 		boolean flag = false;
 		do {
@@ -51,7 +50,7 @@ public class Main {
 					Scanner sc1 = new Scanner(System.in);
 					int a = sc1.nextInt();
 					Object size = a;
-					p2 = new Prioritizer2<T>(a);
+					p2 = new Prioritizer2<T, Comparator>(a);
 					p2.insert((T) size, 0);
 					break;
 				}
@@ -140,5 +139,6 @@ public class Main {
 			}
 		} while (flag == false);
 		System.out.print("Terminated");
+	    p1.compare(p2);  //Used Compare method to compare 
 	}
 }
