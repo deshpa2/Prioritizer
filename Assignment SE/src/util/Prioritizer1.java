@@ -165,10 +165,15 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 		return phase;
 	}
 
-	@Override
-	public int compare(T input, T arg1) {
+	public int compare(Prioritizer1 input1, Prioritizer1 input2) {
 		// TODO Auto-generated method stub
-	
+		return input1.getSize()-input2.getSize();
+		
+	}
+
+	@Override
+	public int compare(T o1, T o2) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 

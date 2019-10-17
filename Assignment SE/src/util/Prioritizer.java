@@ -22,6 +22,7 @@ public interface Prioritizer <T> extends Comparator<T>  {
 	
 	int getSize();
 	
+	/*True denotes in insertion phase and false denotes in removal phase*/
 	boolean isInInsertionPhase();
 	
 	

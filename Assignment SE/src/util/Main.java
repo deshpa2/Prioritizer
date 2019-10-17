@@ -36,7 +36,7 @@ public class Main {
         			
         			p1=new Prioritizer1<>(size,t);
         			for(int i=0;i<size;i++) {
-        				System.out.println("Enter "+i+"th Element");
+        				System.out.println("Enter "+i+1+" th Element");
         				 obj1=sc.nextInt();
         				 p1.insert((T)obj1,i);
         			}
@@ -46,7 +46,6 @@ public class Main {
         			for (int i=0;i<input.length;i++) {
         				System.out.println(input[i]);
         			}
-        			System.out.println(p1.getPhase());
         	break;		
         	}
         		if(prioritizer==2) {
@@ -116,11 +115,8 @@ public class Main {
         		if(prioritizer==1) {
         			System.out.println("Checking for insertion phase");
         			boolean phase=p1.isInInsertionPhase();
-        			if(phase) {
-        				System.out.println("In Insertion Phase");
-        			}else {
-        				System.out.println("In Removal Phase");
-        			}
+        			System.out.println(phase);
+        			
         	}
         		if(prioritizer==2) {
         			System.out.println("Checking for insertion phase");
