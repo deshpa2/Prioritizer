@@ -15,6 +15,8 @@ public class Main {
 
 		// Prioritizer 2- Creating Object and Initialize it using Constructor
 		Prioritizer<T> p2 = null;
+		
+		Prioritizer3<Object, Comparator> p3 = null;
 		Object obj1 = null;
 		boolean flag = false;
 		do {
@@ -56,6 +58,8 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Enter elements to insert");
+					
+				int i=0;
 					obj1=sc.nextInt();
 					 p3.insert((T)obj1,i);
 				}

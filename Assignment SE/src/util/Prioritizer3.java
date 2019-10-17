@@ -1,4 +1,4 @@
-package com.implememtation;
+package util;
 
 import java.util.Scanner;
 
@@ -47,7 +47,6 @@ public abstract class Prioritizer3<T,comparator> implements Prioritizer<T>{
 
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public void removeNextInOrder() {
 		// TODO Auto-generated method stub
 		for (int i=0;i<input.length;i++) {
@@ -108,14 +107,10 @@ public abstract class Prioritizer3<T,comparator> implements Prioritizer<T>{
 
 }
 	
-	@Override
-	public int get_size() {
-		// TODO Auto-generated method stub
-		return input.length-remIndex;
-	}
+	
 
 	@Override
-	public boolean isININsertionPhase() {
+	public boolean isInInsertionPhase() {
 		// TODO Auto-generated method stub
 		return phase;
 	}
@@ -126,9 +121,9 @@ public abstract class Prioritizer3<T,comparator> implements Prioritizer<T>{
 		
 	}
 
-	int getSize() {
+	public int getSize() {
 		// TODO Auto-generated method stub
-		return 0;
+		return input.length-remIndex;
 	}
 
 	@Override
