@@ -1,15 +1,8 @@
+package com.implememtation;
 
-package util;
-
-import java.util.Arrays;
-
-import java.util.Random;
 import java.util.Scanner;
 
-public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
-	
-
-	//private T input[]=(T[])new Object[10];
+public abstract class Prioritizer3<T,comparator> implements Prioritizer<T>{
 	
 	private T input[];
 	private T inputRem[];
@@ -19,9 +12,10 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 	int remIndex=0;
 	Scanner sc=new Scanner(System.in);
 	
-	public Prioritizer1(int size,T t){
+	@SuppressWarnings("unchecked")
+	public Prioritizer3(int size,T t){
 		this.size = size;
-		input= (T[]) new Object[size];
+		input = (T[]) new Object[size];
 		}
 	
 	public T get(int i) {
@@ -41,14 +35,21 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 	}
 	
 	@Override
-	public void removeNextInorder() {
-		phase=false;
-		System.out.println("Before Sorting");
-		for (int i=0;i<input.length;i++) {
-			System.out.println(input[i]);
-		}
-		Arrays.sort(getInput());
-		System.out.println("After Sorting");
+	public void insert(T obj1, int i) {
+		// TODO Auto-generated method stub
+		phase=true;
+		set(i,obj1);
+	}
+	
+	public boolean isPhase() {
+		return phase;
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void removeNextInOrder() {
+		// TODO Auto-generated method stub
 		for (int i=0;i<input.length;i++) {
 			System.out.println(input[i]);
 		}
@@ -65,7 +66,6 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
                break;
             }
         }
-		
 		System.out.println("After removing index"+index);
 		index++;
 		remIndex++;
@@ -74,58 +74,12 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 			System.out.println(inputRem[i]);
 		}
 		
-		
-	}
-	
-	public void setPhase(boolean phase) {
-		this.phase = phase;
-	}
-	public T[] getInput() {
-		return input;
-	}
-	public void setInput(T[] input) {
-		this.input = input;
-	}
-	@Override
-	public void insert(T obj1,int i) {
-			phase=true;
-			set(i,obj1);
-			
-			/*System.out.println("Displaying Content");
-			for(int j=0;i<input.length;j++) {
-				System.out.println(input[j]);
-			}*/
 	}
 
-	public boolean isPhase() {
-		return phase;
-	}
-	
-	@Override
-	public void changePhase() {
-		if(phase) {
-			phase=false;
-			System.out.println("System Phase changed to Removal");
-		}
-		else {
-			phase=true;
-			System.out.println("System Phase changed to Insertion");
-		}
-		
-	}
-
+	@SuppressWarnings("unchecked")
 	@Override
 	public void removeAny() {
 		// TODO Auto-generated method stub
-		phase=false;
-		System.out.println("Before Sorting");
-		for (int i=0;i<input.length;i++) {
-			System.out.println(input[i]);
-		}
-		
-		Arrays.sort(getInput());
-		
-		System.out.println("After Sorting");
 		for (int i=0;i<input.length;i++) {
 			System.out.println(input[i]);
 		}
@@ -141,34 +95,40 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
                }
                break;
             }
-        }
-		
-		System.out.println("After removing index"+index);
-		index++;
-		remIndex++;
-		for (int i=0;i<inputRem.length;i++) {
-			
-			System.out.println(inputRem[i]);
+               
 		}
-	
+      
+	    System.out.println("After removing index"+index);
+	    index++;
+	    remIndex++;
+	    for (int i=0;i<inputRem.length;i++) {
+		
+		System.out.println(inputRem[i]);
 	}
 
+}
+	
 	@Override
-	public int getSize() {
+	public int get_size() {
 		// TODO Auto-generated method stub
 		return input.length-remIndex;
 	}
 
 	@Override
-	public boolean isInInsertionPhase() {
+	public boolean isININsertionPhase() {
 		// TODO Auto-generated method stub
 		return phase;
 	}
-
-	public int compare(Prioritizer1 input1, Prioritizer2 input2) {
+	
+	public int compare(Prioritizer3 input1, Prioritizer3 input2) {
 		// TODO Auto-generated method stub
 		return input1.getSize()-input2.getSize();
 		
+	}
+
+	int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -177,4 +137,21 @@ public class Prioritizer1<T,Comparator>  implements Prioritizer<T>{
 		return 0;
 	}
 
+	@Override
+	public void removeNextInorder() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void changePhase() {
+		// TODO Auto-generated method stub
+		if(phase) {
+			phase=false;
+			System.out.println("System Phase changed to Removal");
+		}
+		else {
+			phase=true;
+			System.out.println("System Phase changed to Insertion");
+		}	
+	}
 }

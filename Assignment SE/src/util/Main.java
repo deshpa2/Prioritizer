@@ -32,7 +32,7 @@ public class Main {
 
 					p1 = new Prioritizer1<>(size, t);
 					for (int i = 0; i < size; i++) {
-						System.out.println("Enter " + i + 1 + " th Element");
+						System.out.println("Enter " + (i + 1) + " th Element");
 						obj1 = sc.nextInt();
 						p1.insert((T) obj1, i);
 					}
@@ -56,8 +56,8 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Enter elements to insert");
-					// obj1=sc.nextInt();
-					// p3.insert((T)obj1,i);
+					obj1=sc.nextInt();
+					 p3.insert((T)obj1,i);
 				}
 			case 2:
 				if (prioritizer == 1) {
@@ -67,7 +67,7 @@ public class Main {
 					p2.changePhase();
 				}
 				if (prioritizer == 3) {
-					// p3.changePhase();
+					p3.changePhase();
 				}
 				break;
 			case 3:
@@ -81,7 +81,7 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Removing Next Element");
-					// p3.removeNextInorder();
+					 p3.removeNextInorder();
 				}
 				break;
 			case 4:
@@ -95,7 +95,7 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Removing a random element");
-					// p3.removeAny();
+					 p3.removeAny();
 				}
 				break;
 			case 5:
@@ -110,7 +110,8 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Getting size");
-					// p3.getSize();
+					int size = p3.getSize();
+					System.out.println(size);
 				}
 				break;
 			case 6:
@@ -130,7 +131,7 @@ public class Main {
 				}
 				if (prioritizer == 3) {
 					System.out.println("Checking for insertion phase");
-					// p3.isInInsertionPhase();
+					 p3.isInInsertionPhase();
 				}
 				break;
 			case 7:
